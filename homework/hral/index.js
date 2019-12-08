@@ -15,4 +15,4 @@ function getColor(color = 'red') {
     console.log(color);
 }
 
-color('yellow');
+// color('yellow');
