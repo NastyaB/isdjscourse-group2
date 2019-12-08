@@ -14,5 +14,6 @@ function getColor(color = 'red') {
     }
     console.log(color);
 }
+klbhjb
 
 // color('yellow');
