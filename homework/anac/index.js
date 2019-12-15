@@ -18,8 +18,8 @@ function printNumbers () {
 }
 
 function isPolindrom (word) {
+   word = word.toUpperCase().replace(/\s/g, '');
    const len = word.length;
-   word = word.toUpperCase();
    for (let i = 1; i <= len / 2; i++) {
       if (word[i - 1] !== word[len - i]) {
          return false;
@@ -30,6 +30,6 @@ function isPolindrom (word) {
 
 printNumbers();
 console.log('absba: ' + isPolindrom('absba'));
-console.log('abssba: ' + isPolindrom('abssba'));
+console.log('Я иду с мечем судия: ' + isPolindrom('Я иду с мечем судия'));
 console.log('abSsBa: ' + isPolindrom('abSsBa'));
 console.log('abS7Ba: ' + isPolindrom('abS7Ba'));
