@@ -18,19 +18,20 @@ function printNumbers () {
 }
 
 function isPalindrom (data) {
-   if (data) {
-      data = data.toString();
-      data = data.toUpperCase().replace(/\s/g, '');
-      const len = data.length;
-
-      for (let i = 1; i <= len / 2; i++) {
-         if (data[i - 1] !== data[len - i]) {
-            return false;
-         }
-      }
-      return true;
+   if (!data) {
+      return false;
    }
-   return false;
+
+   data = data.toString();
+   data = data.toUpperCase().replace(/\s/g, '');
+   const len = data.length;
+
+   for (let i = 1; i <= len / 2; i++) {
+      if (data[i - 1] !== data[len - i]) {
+         return false;
+      }
+   }
+   return true;
 }
 
 printNumbers();
