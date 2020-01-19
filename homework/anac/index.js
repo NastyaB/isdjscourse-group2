@@ -1,5 +1,5 @@
 exports.createSeaBattle = function () {
-   console.log('Welcome to buttleships game./n All the ships were arranged randomly./n Take your shot.');
+   console.log('Welcome to buttleships game.\nAll the ships were arranged randomly.\nTake your shot.');
 
    // Create buttle field
    const ships = [];
