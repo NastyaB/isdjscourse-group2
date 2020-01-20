@@ -27,7 +27,7 @@ exports.createSeaBattle = function () {
       return true;
    }
 
-   // function randomly gets start coordinates abs build ships in row
+   // function randomly gets start coordinates of ships and builds it in row
    function buildShipInRow (deck) {
       let startX = getRandomInt(0, 9 - deck);
       let startY = getRandomInt(0, 9);
@@ -42,7 +42,7 @@ exports.createSeaBattle = function () {
       return true;
    }
 
-   // function randomly gets start coordinates abs build ships in line
+   // function randomly gets start coordinates of ships and builds it in line
    function buildShipInLine (deck) {
       let startI = getRandomInt(0, 9);
       let startJ = getRandomInt(0, 9 - deck);
@@ -57,7 +57,7 @@ exports.createSeaBattle = function () {
       return true;
    }
 
-   // function randomly determines if next ship is builded in row or line and calls appropriate function
+   // function randomly determines if next ship is built in row or line and calls appropriate function
    function buildShips (deck, count) {
       while (count > 0) {
          const isShipInLine = getRandomInt(0, 1);
@@ -72,29 +72,15 @@ exports.createSeaBattle = function () {
       return Math.floor(min + Math.random() * (max + 1 - min));
    }
 
-   function printPlaingField (ships) {
-      console.log('   0 1 2 3 4 5 6 7 8 9');
-      let str = '';
-      for (let i = 0; i < 10; i++) {
-         str = i + '|';
-         for (let j = 0; j < 10; j++) {
-            str = str + (ships[i][j] >= 0 ? ' ' + ships[i][j] : ships[i][j]);
-         }
-         console.log(str + '|');
-      }
-   }
-
    buildShips(4, 1);
    buildShips(3, 2);
    buildShips(2, 3);
    buildShips(1, 4);
    let countOfShips = 10;
-   printPlaingField(ships);
 
    return function seaBattle (y) {
       return function checkCoordinates (x) {
       // -1 мимо, 0 ранил, 1 убил
-      // const x = prompt('Введите X: ');
          try {
             if (countOfShips === 0) {
                throw new Error('All ships are sunked');
@@ -155,8 +141,6 @@ exports.createSeaBattle = function () {
             return 0;
          } catch (err) {
             console.log(err);
-         } finally {
-            printPlaingField(ships);
          }
       };
    };
